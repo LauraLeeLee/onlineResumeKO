@@ -1,0 +1,27 @@
+{
+  "name": "laura",
+  "version": "0.0.1",
+  "description": "image editing",
+  "main": "index.html",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-kss": "^5.0.1",
+    "grunt-mkdir": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LauraLeeLee/frontend-nanodegree-resume.git"
+  },
+  "author": "laura l",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LauraLeeLee/frontend-nanodegree-resume/issues"
+  },
+  "homepage": "https://github.com/LauraLeeLee/frontend-nanodegree-resume#readme"
+}

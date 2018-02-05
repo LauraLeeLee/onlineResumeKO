@@ -1,0 +1,350 @@
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  font-family: 'Overlock', cursive;
+}
+
+.clear-fix {
+  overflow: auto;
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5%;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 48px;
+  display: inline;
+}
+
+/*style the color animation of h1 */
+h1 {
+    -webkit-animation: color-change 12s infinite;
+    -moz-animation: color-change 12s infinite;
+    -o-animation: color-change 12s infinite;
+    -ms-animation: color-change 12s infinite;
+    animation: color-change 12s infinite;
+}
+
+@-webkit-keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #002080; }
+    100% { color: #ffff80; }
+}
+@-moz-keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #002080; }
+    100% { color: #ffff80; }
+}
+@-ms-keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #002080; }
+    100% { color: #ffff80; }
+}
+@-o-keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #002080; }
+    100% { color: #ffff80; }
+}
+@keyframes color-change {
+    0% { color: #fff; }
+    50% { color: #002080; }
+    100% { color: #ffff80; }
+}
+
+h2,
+h3,
+h4,
+h5 {
+  padding: 10px 5%;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 26px;
+  color: #e60000;
+  line-height: 29px;
+  padding: 10px;
+}
+
+#lets-connect h2 {
+  color: white;
+}
+
+h3 {
+  font-size: 20px;
+  color: #000;
+  line-height: 22px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 17px;
+}
+
+h6 {
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+p {
+  font-size: 1.05em;
+  color: #000;
+  line-height: 21px;
+}
+
+a {
+  color: #002080;
+  font-size: 1.15em;
+  text-decoration: none;
+  margin-top: 2px;
+  display: block;
+}
+
+em {
+  font-size: 1.15em;
+  padding-top: 10px;
+}
+
+img {
+  margin: 5px;
+}
+
+span {
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  /*margin: 0;*/
+  /*padding: 0;*/
+}
+
+#main {
+  background-color: #000;
+}
+
+/* TODO: Replace with image later */
+#header, #lets-connect {
+  background: #e60000; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #e60000, #ffff80); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #e60000, #ffff80); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right,#e60000, #ffff80); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #e60000, #ffff80); /* Standard syntax */
+}
+
+#skills-h3 {
+  color: #002080;
+  display: none;
+  font-size: 2em;
+  margin-top: 20px;
+  margin-left: 185px;
+}
+
+#skills {
+  font-size: 1.1em;
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+#lets-connect {
+  text-align: center;
+}
+
+#lets-connect li {
+  padding: 0;
+  margin: 0;
+}
+
+#footerContacts {
+  justify-content: center;
+}
+
+#footerContacts li {
+    padding: 10px;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 16px;
+  color: #f3f3f3;
+  line-height: 28px;
+  /*text-align: center;*/
+}
+
+.biopic {
+  float: left;
+  padding: 1px;
+  margin-right: 5px;
+  margin-top: 10px;
+  width: 200px;
+  display: none;
+  border: 3px double #fff;
+}
+
+.date-text {
+  font-style: italic;
+  font-size: 1.15em;
+  color: #ff751a;
+  line-height: 16px;
+  float: left;
+  padding-top: 2px;
+  padding-right: 20px;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 1.15em;
+  color: #ff751a;
+  line-height: 16px;
+  float: right;
+
+}
+
+.blue {
+  background-color: #002080;
+}
+
+.blue-text {
+  color: #002080;
+}
+
+.white-text {
+  font-weight: bold;
+  color: #fff;
+}
+
+.yellow-gradient {
+  background: #ffff80; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #ffff80, #fff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #ffff80, #fff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #ffff80, #fff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #ffff80, #fff); /* Standard syntax */
+  padding-bottom: 10px;
+  clear: both;
+}
+
+.education-entry a {
+  font-size: 1.25em;
+
+}
+
+.project-entry {
+ background: #002080;
+}
+
+.project-entry p {
+  color: #fff;
+  font-size: 1.05em;
+}
+
+.project-entry img {
+  border: 3px solid #000;
+}
+
+.flex-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+
+.center-content {
+  padding: 2.5% 5%;
+}
+
+/*styling for the onClick window in maps*/
+.infoWindow {
+    width: 250px;
+    background: #e60000;
+    background: -webkit-radial-gradient( #e60000, #ffff80);
+    background: -o-radial-gradient(#e60000, #ffff80);
+    background: -moz-radial-gradient(#e60000, #ffff80);
+    background: radial-gradient(#e60000, #ffff80);
+    text-align: center;
+}
+
+.bgimg {
+  width: 90%;
+  padding: 10px 0 10px 10px;
+  margin-top: -20px;
+}
+
+/* social icons */
+[class*="entypo-"]:before {
+  color: white;
+  display: inline-block;
+  font-family: 'entypo', sans-serif;
+  font-size: 1.5em;
+  text-shadow: 3px 3px 3px black;
+  width: 1.5em;
+}
+
+/* Media queries to handle various device widths */
+
+@media only screen and (max-width: 1024px) {
+  #lets-connect {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width:900px) {
+  .biopic {
+    width: 175px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #lets-connect {
+    margin-top: 10%;
+  }
+  .biopic {
+    width: 150px;
+  }
+  .welcome-message {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  #skills-h3,
+  .biopic {
+    display: block;
+  }
+}
