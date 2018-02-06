@@ -30,18 +30,17 @@ h1 {
   font-weight: 900;
   line-height: 48px;
   display: inline;
+  color: #ffff80;
+  /*style the color animation of h1 */
+  /* -webkit-animation: color-change 12s infinite;
+  -moz-animation: color-change 12s infinite;
+  -o-animation: color-change 12s infinite;
+  -ms-animation: color-change 12s infinite;
+  animation: color-change 12s infinite; */
 }
 
-/*style the color animation of h1 */
-h1 {
-    -webkit-animation: color-change 12s infinite;
-    -moz-animation: color-change 12s infinite;
-    -o-animation: color-change 12s infinite;
-    -ms-animation: color-change 12s infinite;
-    animation: color-change 12s infinite;
-}
-
-@-webkit-keyframes color-change {
+/* keyframes for the color-change for h1 */
+/* @-webkit-keyframes color-change {
     0% { color: #fff; }
     50% { color: #002080; }
     100% { color: #ffff80; }
@@ -65,7 +64,7 @@ h1 {
     0% { color: #fff; }
     50% { color: #002080; }
     100% { color: #ffff80; }
-}
+} */
 
 h2,
 h3,

@@ -126,12 +126,7 @@ var octopus = {
     projectView.render(projectData);
 
     mapView.render();
-
   },
-
-
-
-
 };
 
 //-----------------View
