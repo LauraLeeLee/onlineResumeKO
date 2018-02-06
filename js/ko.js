@@ -102,7 +102,21 @@ var vm;
 var ViewModel = function() {
   var self = this;
 
-  this.data = observableArray(data);
+  self.name = ko.observable(data.bio.name);
+  self.role = ko.observable(data.bio.role);
+  self.welcomeMessage = ko.observable(data.bio.welcomeMessage);
+  self.biopic = ko.observable(data.bio.biopic);
+  self.mobile = ko.observable(data.bio.contacts.mobile);
+  self.email = ko.observable(data.bio.contacts.email);
+  self.github = ko.observable(data.bio.contacts.github);
+  self.location = ko.observable(data.bio.contacts.location);
+  self.skills = ko.observableArray(data.bio.skills);
+  self.schools = ko.observableArray(data.education.schools);
+  self.onlineCourses = ko.observableArray(data.education.onlineCourses);
+  self.jobs = ko.observableArray(data.work.jobs);
+  self.projects = ko.observableArray(data.projects.projectsS);
+
+
 };
 
 ko.applyBindings(ViewModel);
