@@ -119,4 +119,4 @@ var ViewModel = function() {
 
 };
 
-ko.applyBindings(ViewModel);
+ko.applyBindings(new ViewModel());
