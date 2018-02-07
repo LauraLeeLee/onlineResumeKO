@@ -231,6 +231,10 @@ ul {
   display: inline;
 }
 
+.no-link {
+  display: none;
+}
+
 .blue {
   background-color: #002080;
 }

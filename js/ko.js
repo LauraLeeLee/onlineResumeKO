@@ -9,32 +9,38 @@ var data = {
       title: "mobile",
       value: "724-272-xxxx",
       link: "tel:724-272-3057",
-      showContact: ko.observable(true)
+      showContact: ko.observable(true),
+      noLinkClass: ko.observable(this.link ? false : true)
     },
     { title: "email",
       value: "LauraRDH@aol.com",
       link: "mailto:LauraRDH@aol.com",
-      showContact: ko.observable(true)
+      showContact: ko.observable(true),
+      noLinkClass: ko.observable(this.link ? false : true)
     },
     { title: "twitter",
       value: "",
       link: "",
-      showContact: ko.observable(true)
+      showContact: ko.observable(true),
+      noLinkClass: ko.observable(this.link ? false : true)
     },
     { title: "github",
       value: "https://github.com/LauraLeeLee",
       link: "https://github.com/LauraLeeLee",
-      showContact: ko.observable(true)
+      showContact: ko.observable(true),
+      noLinkClass: ko.observable(this.link ? false : true)
     },
     { title: "blog",
       value: "",
       link: "",
-      showContact: ko.observable(true)
+      showContact: ko.observable(true),
+      noLinkClass: ko.observable(this.link ? false : true)
     },
     { title: "location",
       value: "Pittsburgh",
       link: "",
-      showContact: ko.observable(true)
+      showContact: ko.observable(true),
+      noLinkClass: ko.observable(this.link ? true : false)
     }],
     "skills": ["HTML", "CSS", "JavaScript", "KnockoutJs", "Photoshop"]
   },
@@ -133,7 +139,7 @@ var ViewModel = function() {
   self.biopic = ko.observable(data.bio.biopic);
   self.contacts = ko.observableArray(data.bio.contacts);
   self.link = ko.observable(data.bio.contacts.link);
-
+  // self.noLinkClass = ko.observable(data.bio.contacts.link ? false : true);
   // self.mobile = ko.observable(data.bio.contacts.mobile);
   // self.email = ko.observable(data.bio.contacts.email);
   // self.twitter = ko.observable(data.bio.contacts.twitter);
@@ -149,7 +155,8 @@ var ViewModel = function() {
 
   self.hideLink = function(contact){
     if( self.link !== ""){
-      self.contact.showContact(false);
+      // self.contact.showContact(false);
+
     }
   }
 };
