@@ -11,7 +11,7 @@ var data = {
       "github": "https://github.com/LauraLeeLee",
       "location": "Pittsburgh"
     },
-    "skills": ["HTML", "CSS", "JavaScript", "Photoshop"]
+    "skills": ["HTML", "CSS", "JavaScript", "KnockoutJs", "Photoshop"]
   },
   education: {
     "schools": [{

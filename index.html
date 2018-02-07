@@ -33,39 +33,66 @@ Cameron Pittman, Udacity Course Developer
         </li>
         <li class="flex-item">
           <span class="blue-text">email</span>
-          <span class="white-text" data-bind="text: email"></span>
+          <a class="white-text" data-bind="attr: {href: email, title: email}, text: email"></a>
         </li>
         <li class="flex-item">
           <span class="blue-text">twitter</span>
-          <span class="white-text"></span>
+          <a class="white-text"></a>
         </li>
         <li class="flex-item">
           <span class="blue-text">github</span>
-          <span class="white-text" data-bind="text: github"></span>
+          <a class="white-text" data-bind="attr: { href: github, title: github}, text: github"></a>
         </li>
         <li class="flex-item">
           <span class="blue-text">blog</span>
-          <span class="white-text"></span>
+          <a class="white-text"></a>
         </li>
         <li class="flex-item">
           <span class="blue-text">location</span>
           <span class="white-text" data-bind="text: city"></span>
         </li>
       </ul>
-
+      <img data-bind="attr: {src: biopic}" class="biopic"></img>
+      <span data-bind="text: welcomeMessage" class="welcome-message"></span>
+      <h3 id="skills-h3">Skills at a Glance</h3>
+      <ul data-bind = "foreach: skills" id="skills" class="flex-column">
+        <li class="flex-item"><span class="white-text"></span></li>
+      </ul>
     </div>
     <div style="clear: both;"></div>
     <div id="workExperience" class="yellow-gradient">
       <h2>Work Experience</h2>
+      <div class="work-entry"></div>
+      <a ></a>
+      <div class="date-text"></div>
+      <div class="location-text"></div>
+      <p><br></p>
     </div>
     <div id="projects">
       <h2>Projects</h2>
+      <div class="project-entry blue">
+        <a></a>
+        <div class="date-text"></div>
+        <p><br></p>
+        <img>
+      </div>
     </div>
     <div id="education" class="yellow-gradient">
       <h2>Education</h2>
+      <div class="education-entry">
+        <a></a>
+        <div class="location-text"></div>
+        <div ckass-"location-text"></div>
+        <em<br></em>
+        <h3>Online Classes</h3>
+        <a></a>
+        <div class="date-text"></div>
+        <br><a></a>
+      </div>
     </div>
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
+      <div id="map"></div>
     </div>
     <div id="lets-connect">
       <h2 class="center-text">Let's Connect</h2>
