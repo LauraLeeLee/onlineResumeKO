@@ -5,14 +5,31 @@ var data = {
     "role": "Frontend Web Developer",
     "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
     "biopic": "images/me-400_small.jpg",
-    "contacts": {
-      "mobile": "724-272-xxxx",
-      "email": "LauraRDH@aol.com",
-      "twitter": "",
-      "github": "https://github.com/LauraLeeLee",
-      "blog": "",
-      "location": "Pittsburgh"
+    "contacts": [{
+      "title": "mobile",
+      "value": "724-272-xxxx",
+      "link": "tel:724-272-3057"
     },
+    { "title": "email",
+      "value": "LauraRDH@aol.com",
+      "link": "LauraRDH@aol.com"
+    },
+    { "title": "twitter",
+      "value": "",
+      "link": ""
+    },
+    { "title": "github",
+      "value": "https://github.com/LauraLeeLee",
+      "link": "https://github.com/LauraLeeLee"
+    },
+    { "title": "blog",
+      "value": "",
+      "link": ""
+    },
+    { "title": "location",
+      "value": "Pittsburgh",
+      "link": ""
+    }],
     "skills": ["HTML", "CSS", "JavaScript", "KnockoutJs", "Photoshop"]
   },
   education: {
@@ -108,11 +125,14 @@ var ViewModel = function() {
   self.role = ko.observable(data.bio.role);
   self.welcomeMessage = ko.observable(data.bio.welcomeMessage);
   self.biopic = ko.observable(data.bio.biopic);
+  self.contacts = ko.observableArray(data.bio.contacts);
+
   self.mobile = ko.observable(data.bio.contacts.mobile);
   self.email = ko.observable(data.bio.contacts.email);
   self.twitter = ko.observable(data.bio.contacts.twitter);
   self.github = ko.observable(data.bio.contacts.github);
   self.city = ko.observable(data.bio.contacts.location);
+
   self.skills = ko.observableArray(data.bio.skills);
   self.schools = ko.observableArray(data.education.schools);
   self.onlineCourses = ko.observableArray(data.education.onlineCourses);
@@ -122,22 +142,22 @@ var ViewModel = function() {
 
   self.showContactInfo = function(){
     if(self.mobile === ""){
-      showContact(false);
+      self.showContact(false);
     }
     if(self.email === ""){
-      showContact(false);
+      self.showContact(false);
     }
     if(self.twitter === ""){
-      showContact(false);
+      self.showContact(false);
     }
     if(self.github === ""){
-      showContact(false);
+      self.showContact(false);
     }
     if(self.blog === ""){
-      showContact(false);
+      self.showContact(false);
     }
     if(self.location === ""){
-      showContact(false);
+      self.showContact(false);
     }
   };
 

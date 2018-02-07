@@ -26,26 +26,11 @@ Cameron Pittman, Udacity Course Developer
     <div id="header" class="center-content clear-fix">
       <h1 data-bind="text: name"></h1>
       <span data-bind="text: role"></span>
-      <ul id="topContacts" class="flex-box">
-        <li data-bind="visible: showContact" class="flex-item">
-          <span class="blue-text">email</span>
-          <a class="white-text skills-link" data-bind="attr: {href: email, title: email}, text: email"></a>
-        </li>
-        <li data-bind="visible: showContact" class="flex-item">
-          <span class="blue-text" data-bind: "">twitter</span>
-          <a class="white-text skills-link"></a>
-        </li>
-        <li data-bind="visible: showContact" class="flex-item">
-          <span class="blue-text">github</span>
-          <a class="white-text skills-link" data-bind="attr: { href: github, title: github}, text: github"></a>
-        </li>
-        <li data-bind="visible: showContact" class="flex-item">
-          <span class="blue-text">blog</span>
-          <a class="white-text skills-link"></a>
-        </li>
-        <li data-bind="visible: showContact" class="flex-item">
-          <span class="blue-text">location</span>
-          <span class="white-text" data-bind="text: city"></span>
+      <ul data-bind="foreach: contacts" id="topContacts" class="flex-box">
+        <li data-bind="visible: value" class="flex-item">
+          <span data-bind="text: title" class="blue-text"></span>
+          <a class="white-text skills-link" data-bind="attr: {href: link, title: link}, text: link"></a>
+          <span data-bind="text: value" class="white-text"></span>
         </li>
       </ul>
       <img data-bind="attr: {src: biopic}" class="biopic"></img>
