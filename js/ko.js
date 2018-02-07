@@ -6,35 +6,35 @@ var data = {
     "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
     "biopic": "images/me-400_small.jpg",
     "contacts": [{
-      "title": "mobile",
-      "value": "724-272-xxxx",
-      "link": "tel:724-272-3057",
-      "town": ""
+      title: "mobile",
+      value: "724-272-xxxx",
+      link: "tel:724-272-3057",
+      showContact: ko.observable(true)
     },
-    { "title": "email",
-      "value": "LauraRDH@aol.com",
-      "link": "LauraRDH@aol.com",
-      "town": ""
+    { title: "email",
+      value: "LauraRDH@aol.com",
+      link: "mailto:LauraRDH@aol.com",
+      showContact: ko.observable(true)
     },
-    { "title": "twitter",
-      "value": "",
-      "link": "",
-      "town": ""
+    { title: "twitter",
+      value: "",
+      link: "",
+      showContact: ko.observable(true)
     },
-    { "title": "github",
-      "value": "https://github.com/LauraLeeLee",
-      "link": "https://github.com/LauraLeeLee",
-      "town": ""
+    { title: "github",
+      value: "https://github.com/LauraLeeLee",
+      link: "https://github.com/LauraLeeLee",
+      showContact: ko.observable(true)
     },
-    { "title": "blog",
-      "value": "",
-      "link": "",
-      "town": ""
+    { title: "blog",
+      value: "",
+      link: "",
+      showContact: ko.observable(true)
     },
-    { "title": "location",
-      "value": "Pittsburgh",
-      "link": "",
-      "town": "Pittsburgh"
+    { title: "location",
+      value: "Pittsburgh",
+      link: "",
+      showContact: ko.observable(true)
     }],
     "skills": ["HTML", "CSS", "JavaScript", "KnockoutJs", "Photoshop"]
   },
@@ -132,41 +132,26 @@ var ViewModel = function() {
   self.welcomeMessage = ko.observable(data.bio.welcomeMessage);
   self.biopic = ko.observable(data.bio.biopic);
   self.contacts = ko.observableArray(data.bio.contacts);
+  self.link = ko.observable(data.bio.contacts.link);
 
-  self.mobile = ko.observable(data.bio.contacts.mobile);
-  self.email = ko.observable(data.bio.contacts.email);
-  self.twitter = ko.observable(data.bio.contacts.twitter);
-  self.github = ko.observable(data.bio.contacts.github);
-  self.city = ko.observable(data.bio.contacts.location);
+  // self.mobile = ko.observable(data.bio.contacts.mobile);
+  // self.email = ko.observable(data.bio.contacts.email);
+  // self.twitter = ko.observable(data.bio.contacts.twitter);
+  // self.github = ko.observable(data.bio.contacts.github);
+  // self.city = ko.observable(data.bio.contacts.location);
 
   self.skills = ko.observableArray(data.bio.skills);
   self.schools = ko.observableArray(data.education.schools);
   self.onlineCourses = ko.observableArray(data.education.onlineCourses);
   self.jobs = ko.observableArray(data.work.jobs);
   self.projects = ko.observableArray(data.projects.projectsS);
-  self.showContact = ko.observable(true);
+  // self.showContact = ko.observable(true);
 
-  self.showContactInfo = function(){
-    if(self.mobile === ""){
-      self.showContact(false);
+  self.hideLink = function(contact){
+    if( self.link !== ""){
+      self.contact.showContact(false);
     }
-    if(self.email === ""){
-      self.showContact(false);
-    }
-    if(self.twitter === ""){
-      self.showContact(false);
-    }
-    if(self.github === ""){
-      self.showContact(false);
-    }
-    if(self.blog === ""){
-      self.showContact(false);
-    }
-    if(self.location === ""){
-      self.showContact(false);
-    }
-  };
-
+  }
 };
 
 ko.applyBindings(new ViewModel());
