@@ -27,27 +27,23 @@ Cameron Pittman, Udacity Course Developer
       <h1 data-bind="text: name"></h1>
       <span data-bind="text: role"></span>
       <ul id="topContacts" class="flex-box">
-        <li class="flex-item">
-          <span class="blue-text">mobile</span>
-          <span class="white-text" data-bind="text: mobile"></span>
-        </li>
-        <li class="flex-item">
+        <li data-bind="visible: showContact" class="flex-item">
           <span class="blue-text">email</span>
-          <a class="white-text" data-bind="attr: {href: email, title: email}, text: email"></a>
+          <a class="white-text skills-link" data-bind="attr: {href: email, title: email}, text: email"></a>
         </li>
-        <li class="flex-item">
-          <span class="blue-text">twitter</span>
-          <a class="white-text"></a>
+        <li data-bind="visible: showContact" class="flex-item">
+          <span class="blue-text" data-bind: "">twitter</span>
+          <a class="white-text skills-link"></a>
         </li>
-        <li class="flex-item">
+        <li data-bind="visible: showContact" class="flex-item">
           <span class="blue-text">github</span>
-          <a class="white-text" data-bind="attr: { href: github, title: github}, text: github"></a>
+          <a class="white-text skills-link" data-bind="attr: { href: github, title: github}, text: github"></a>
         </li>
-        <li class="flex-item">
+        <li data-bind="visible: showContact" class="flex-item">
           <span class="blue-text">blog</span>
-          <a class="white-text"></a>
+          <a class="white-text skills-link"></a>
         </li>
-        <li class="flex-item">
+        <li data-bind="visible: showContact" class="flex-item">
           <span class="blue-text">location</span>
           <span class="white-text" data-bind="text: city"></span>
         </li>

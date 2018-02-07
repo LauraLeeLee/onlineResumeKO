@@ -8,7 +8,9 @@ var data = {
     "contacts": {
       "mobile": "724-272-xxxx",
       "email": "LauraRDH@aol.com",
+      "twitter": "",
       "github": "https://github.com/LauraLeeLee",
+      "blog": "",
       "location": "Pittsburgh"
     },
     "skills": ["HTML", "CSS", "JavaScript", "KnockoutJs", "Photoshop"]
@@ -108,6 +110,7 @@ var ViewModel = function() {
   self.biopic = ko.observable(data.bio.biopic);
   self.mobile = ko.observable(data.bio.contacts.mobile);
   self.email = ko.observable(data.bio.contacts.email);
+  self.twitter = ko.observable(data.bio.contacts.twitter);
   self.github = ko.observable(data.bio.contacts.github);
   self.city = ko.observable(data.bio.contacts.location);
   self.skills = ko.observableArray(data.bio.skills);
@@ -115,7 +118,28 @@ var ViewModel = function() {
   self.onlineCourses = ko.observableArray(data.education.onlineCourses);
   self.jobs = ko.observableArray(data.work.jobs);
   self.projects = ko.observableArray(data.projects.projectsS);
+  self.showContact = ko.observable(true);
 
+  self.showContactInfo = function(){
+    if(self.mobile === ""){
+      showContact(false);
+    }
+    if(self.email === ""){
+      showContact(false);
+    }
+    if(self.twitter === ""){
+      showContact(false);
+    }
+    if(self.github === ""){
+      showContact(false);
+    }
+    if(self.blog === ""){
+      showContact(false);
+    }
+    if(self.location === ""){
+      showContact(false);
+    }
+  };
 
 };
 

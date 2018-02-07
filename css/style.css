@@ -224,7 +224,11 @@ ul {
   color: #ff751a;
   line-height: 16px;
   float: right;
+}
 
+.skills-link {
+  font-size: 1em;
+  display: inline;
 }
 
 .blue {
