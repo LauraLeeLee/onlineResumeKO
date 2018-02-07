@@ -8,27 +8,33 @@ var data = {
     "contacts": [{
       "title": "mobile",
       "value": "724-272-xxxx",
-      "link": "tel:724-272-3057"
+      "link": "tel:724-272-3057",
+      "town": ""
     },
     { "title": "email",
       "value": "LauraRDH@aol.com",
-      "link": "LauraRDH@aol.com"
+      "link": "LauraRDH@aol.com",
+      "town": ""
     },
     { "title": "twitter",
       "value": "",
-      "link": ""
+      "link": "",
+      "town": ""
     },
     { "title": "github",
       "value": "https://github.com/LauraLeeLee",
-      "link": "https://github.com/LauraLeeLee"
+      "link": "https://github.com/LauraLeeLee",
+      "town": ""
     },
     { "title": "blog",
       "value": "",
-      "link": ""
+      "link": "",
+      "town": ""
     },
     { "title": "location",
       "value": "Pittsburgh",
-      "link": ""
+      "link": "",
+      "town": "Pittsburgh"
     }],
     "skills": ["HTML", "CSS", "JavaScript", "KnockoutJs", "Photoshop"]
   },
