@@ -117,25 +117,20 @@ function initializeMap() {
   var mapOptions = {
     disableDefaultUI: true
   };
-
   /*
   For the map to be displayed, the googleMap var must be
   appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
   /*
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
   */
   function locationFinder() {
-
     // initializes an empty array
     var locations = [];
-
     // adds the single location property from bio to the locations array
     locations.push(model.bio.contacts.location);
-
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
@@ -143,7 +138,6 @@ function initializeMap() {
     model.education.schools.forEach(function(school){
       locations.push(school.location);
     });
-
     // iterates through work locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
@@ -154,20 +148,17 @@ function initializeMap() {
 
     return locations;
   }
-
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
   placeData is the object returned from search results containing information
   about a single location.
   */
   function createMapMarker(placeData) {
-
     // The next lines save location data from the search result object to local variables
     var lat = placeData.geometry.location.lat();  // latitude from the place service
     var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
-
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
@@ -180,7 +171,6 @@ function initializeMap() {
     var infoWindow = new google.maps.InfoWindow({
       content: name
     });
-
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
@@ -190,7 +180,6 @@ function initializeMap() {
                       '<br>' +
                       '<img class="bgimg" src="' + streetviewUrl + '">');
     });
-
     // this is where the pin actually gets added to the map.
     // bounds.extend() takes in a map location object
     bounds.extend(new google.maps.LatLng(lat, lon));

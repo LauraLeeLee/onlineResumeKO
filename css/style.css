@@ -276,6 +276,10 @@ ul {
   border: 3px solid #000;
 }
 
+.project-a-tag {
+  color: #ffff80;
+}
+
 .flex-box {
   display: -webkit-flex;
   display: flex;

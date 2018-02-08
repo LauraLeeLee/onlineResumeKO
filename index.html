@@ -38,38 +38,64 @@ Cameron Pittman, Udacity Course Developer
       <img data-bind="attr: {src: biopic}" class="biopic"></img>
       <h3 id="skills-h3">Skills at a Glance</h3>
       <ul data-bind = "foreach: skills" id="skills" class="flex-column">
-        <li class="flex-item"><span data-bind = "text: $data"class="white-text"></span></li>
+        <li class="flex-item"><span data-bind = "text: $data" class="white-text"></span></li>
       </ul>
     </div>
     <div style="clear: both;"></div>
     <div id="workExperience" class="yellow-gradient">
       <h2>Work Experience</h2>
-      <div class="work-entry"></div>
-      <a ></a>
-      <div class="date-text"></div>
-      <div class="location-text"></div>
-      <p><br></p>
+      <div  data-bind = "foreach: jobs">
+        <div class="work-entry">
+          <ul>
+            <li>
+              <a data-bind = "text: employer"></a><span data-bind = "text: title"></span>
+              <div data-bind = "text: dates" class="date-text"></div>
+              <div data-bind = "text: location" class="location-text"></div>
+              <p data-bind = "text: description"><br></p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div id="projects">
       <h2>Projects</h2>
       <div class="project-entry blue">
-        <a></a>
-        <div class="date-text"></div>
-        <p><br></p>
-        <img>
+        <ul data-bind = "foreach: projects">
+          <li>
+            <a data-bind = "text: title" class = "project-a-tag"></a>
+            <span data-bind = "text: dates" class="date-text"></span>
+            <p data-bind = "text: description"><br></p>
+            <img data-bind = "foreach: images">
+          </li>
+        </ul>
       </div>
     </div>
     <div id="education" class="yellow-gradient">
       <h2>Education</h2>
-      <div class="education-entry">
-        <a></a>
-        <div class="location-text"></div>
-        <div ckass-"location-text"></div>
-        <em<br></em>
-        <h3>Online Classes</h3>
-        <a></a>
-        <div class="date-text"></div>
-        <br><a></a>
+      <div data-bind = "foreach: schools">
+        <div class="education-entry">
+          <ul>
+            <li >
+              <a data-bind = "attr: {href: url, title: url}, text: name"></a><span data-bind = "text: degree"></span>
+              <div data-bind = "text: dates" class="date-text"></div>
+              <div data-bind = "text: location" class = "location-text"></div>
+              <em data-bind = "text: majors"><br>Major:</em>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h3>Online Classes</h3>
+      <div data-bind = "foreach: onlineCourses">
+        <div class="education-entry">
+          <ul>
+            <li>
+              <a data-bind = "text: title"></a><span data-bind = "text: school"> -- </span>
+              <div data-bind = "text: dates" class="date-text"><p data-bind = "text: school"></p>
+              </div>
+              <br><a data-bind = "attr: {href: url, title: url}, text: url"></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div id="mapDiv">
@@ -80,16 +106,16 @@ Cameron Pittman, Udacity Course Developer
       <h2 class="center-text">Let's Connect</h2>
       <ul id="footerContacts" class="flex-box">
         <li>
-          <a href="https://www.facebook.com/lauraleelee" class="entypo-facebook"></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/laura-logan-30272a16?trk=hp-identity-name" class="entypo-linkedin"></a>
+          <a href="mailto:laurardh@aol.com" class="entypo-mail"></a>
         </li>
         <li>
           <a href="https://www.github.com/LauraLeeLee" class="entypo-github"></a>
         </li>
         <li>
-          <a href="mailto:laurardh@aol.com" class="entypo-mail"></a>
+            <a href="https://www.linkedin.com/in/laura-logan-30272a16?trk=hp-identity-name" class="entypo-linkedin"></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/lauraleelee" class="entypo-facebook"></a>
         </li>
       </ul>
     </div>

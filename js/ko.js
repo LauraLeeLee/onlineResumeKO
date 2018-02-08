@@ -57,7 +57,7 @@ var data = {
         "title": "Frontend Web Development",
         "school": "Udacity",
         "url": "https://www.udacity.com",
-        "dates": "2016-2017"
+        "dates": "2016-2018"
       },
       {
         "title": "Intro to JavaScript",
@@ -66,9 +66,9 @@ var data = {
         "url": "http//www.codeschool.com"
       },
       {
-        "title": "Introduction to CSS3 and HTML5",
+        "title": "Introduction to JavaScript",
         "school": "Ed2Go",
-        "dates": "March 2016-April 2016",
+        "dates": "July 2016-August 2016",
         "url": "http://www.ed2go.com"
       },
       {
@@ -78,33 +78,34 @@ var data = {
         "url": "http://www.ed2go.com"
       },
       {
-        "title": "Introduction to JavaScript",
+        "title": "Introduction to CSS3 and HTML5",
         "school": "Ed2Go",
-        "dates": "July 2016-August 2016",
+        "dates": "March 2016-April 2016",
         "url": "http://www.ed2go.com"
       }
-    ]
+    ],
   },
   work: {
     "jobs": [{
-        "employer": "Centre for Dentistry",
-        "title": "Office Manager/Dental Marketer",
-        "location": "Cranberry Twp, PA",
-        "dates": "1993-present",
-        "description": "Help manage daily flow of dental office. Interview and assist in the managment of employees. Manage marketing for new and existing patients."
+        employer: "Centre for Dentistry",
+        title: "- Office Manager/Dental Marketer",
+        location: "Cranberry Twp, PA",
+        dates: "1993-present",
+        description: "Help manage daily flow of dental office. Interview and assist in the managment of employees. Manage marketing for new and existing patients."
       },
       {
-        "employer": "Dr. Irving Kraft",
-        "title": "Dental Hygienist",
-        "location": "Philadelphia, PA",
-        "dates": "1988-1993",
-        "description": "Provide prophylaxis, root planing and scaling, take necessary xrays, patient education, treatment presentation."
+        employer: "Dr. Irving Kraft",
+        title: "- Dental Hygienist",
+        location: "Philadelphia, PA",
+        dates: "1988-1993",
+        description: "Provide prophylaxis, root planing and scaling, take necessary xrays, patient education, treatment presentation."
       }
     ]
   },
   projects: {
     "projects": [{
         "title": "Portfolio Project",
+        "link": "",
         "dates": "December, 2016",
         "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
         "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"]
@@ -113,6 +114,7 @@ var data = {
 
       {
         "title": "Roma",
+        "link": "",
         "dates": "August 2015",
         "description": "Journey through the Eternal City",
         "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg", "images/rome3-250_xsmall.jpg"]
@@ -120,6 +122,7 @@ var data = {
 
       {
         "title": "Fiorenze",
+        "link": "",
         "dates": "September 2011",
         "description": "Discovery of Renessaince history",
         "images": ["images/florence3-250_xsmall.jpg", "images/florence4-250_xsmall.jpg", "images/florence5-250_xsmall.jpg"]
@@ -139,6 +142,8 @@ var ViewModel = function() {
   self.biopic = ko.observable(data.bio.biopic);
   self.contacts = ko.observableArray(data.bio.contacts);
   self.link = ko.observable(data.bio.contacts.link);
+  self.facebook = ko.observable(data.bio.facebook);
+  self.linkedin = ko.observable(data.bio.linkedin);
   // self.noLinkClass = ko.observable(data.bio.contacts.link ? false : true);
   // self.mobile = ko.observable(data.bio.contacts.mobile);
   // self.email = ko.observable(data.bio.contacts.email);
@@ -150,7 +155,7 @@ var ViewModel = function() {
   self.schools = ko.observableArray(data.education.schools);
   self.onlineCourses = ko.observableArray(data.education.onlineCourses);
   self.jobs = ko.observableArray(data.work.jobs);
-  self.projects = ko.observableArray(data.projects.projectsS);
+  self.projects = ko.observableArray(data.projects.projects);
   // self.showContact = ko.observable(true);
 
   self.hideLink = function(contact){
@@ -160,5 +165,4 @@ var ViewModel = function() {
     }
   }
 };
-
 ko.applyBindings(new ViewModel());
