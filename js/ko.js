@@ -6,27 +6,27 @@ var data = {
     "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
     "biopic": "images/me-400_small.jpg",
     "contacts": [{
-      title: "mobile",
-      value: "724-272-xxxx",
-      link: "tel:724-272-3057",
-      showContact: ko.observable(true),
-      noLinkClass: ko.observable(this.link ? false : true)
-    },
-    { title: "email",
+      title: "email",
       value: "LauraRDH@aol.com",
       link: "mailto:LauraRDH@aol.com",
-      showContact: ko.observable(true),
-      noLinkClass: ko.observable(this.link ? false : true)
-    },
-    { title: "twitter",
-      value: "",
-      link: "",
       showContact: ko.observable(true),
       noLinkClass: ko.observable(this.link ? false : true)
     },
     { title: "github",
       value: "https://github.com/LauraLeeLee",
       link: "https://github.com/LauraLeeLee",
+      showContact: ko.observable(true),
+      noLinkClass: ko.observable(this.link ? false : true)
+    },
+    { title: "mobile",
+      value: "724-272-xxxx",
+      link: "tel:724-272-3057",
+      showContact: ko.observable(true),
+      noLinkClass: ko.observable(this.link ? false : true)
+    },
+    { title: "twitter",
+      value: "",
+      link: "",
       showContact: ko.observable(true),
       noLinkClass: ko.observable(this.link ? false : true)
     },

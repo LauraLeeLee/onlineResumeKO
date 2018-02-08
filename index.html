@@ -34,11 +34,11 @@ Cameron Pittman, Udacity Course Developer
           <span data-bind="text: value, css: {'no-link': noLinkClass()===true}" class="white-text"></span>
         </li>
       </ul>
-      <img data-bind="attr: {src: biopic}" class="biopic"></img>
       <span data-bind="text: welcomeMessage" class="welcome-message"></span>
+      <img data-bind="attr: {src: biopic}" class="biopic"></img>
       <h3 id="skills-h3">Skills at a Glance</h3>
       <ul data-bind = "foreach: skills" id="skills" class="flex-column">
-        <li class="flex-item"><span class="white-text"></span></li>
+        <li class="flex-item"><span data-bind = "text: $data"class="white-text"></span></li>
       </ul>
     </div>
     <div style="clear: both;"></div>
