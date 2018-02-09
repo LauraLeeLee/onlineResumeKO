@@ -12,6 +12,7 @@ function initializeMap() {
 
   var mapOptions = {
     disableDefaultUI: true,
+    gestureHandling: 'greedy',
   };
   /*
   For the map to be displayed, the googleMap var must be
@@ -33,14 +34,14 @@ function initializeMap() {
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    data.education.schools.forEach(function(school){
+    vm.schools().forEach(function(school){
       locations.push(school.location);
     });
     // iterates through work locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    data.work.jobs.forEach(function(job){
+    vm.jobs().forEach(function(job){
       locations.push(job.location);
     });
 
