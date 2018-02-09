@@ -65,7 +65,9 @@ Cameron Pittman, Udacity Course Developer
             <a data-bind = "text: title" class = "project-a-tag"></a>
             <span data-bind = "text: dates" class="date-text"></span>
             <p data-bind = "text: description"><br></p>
-            <img data-bind = "foreach: images">
+            <div  data-bind = "foreach: images">
+              <img data-bind = "attr: {src: $data}">
+            <div>
           </li>
         </ul>
       </div>
@@ -76,10 +78,10 @@ Cameron Pittman, Udacity Course Developer
         <div class="education-entry">
           <ul>
             <li >
-              <a data-bind = "attr: {href: url, title: url}, text: name"></a><span data-bind = "text: degree"></span>
+              <a data-bind = "attr: {href: url, title: url}, text: name"></a>
               <div data-bind = "text: dates" class="date-text"></div>
               <div data-bind = "text: location" class = "location-text"></div>
-              <em data-bind = "text: majors"><br>Major:</em>
+              <em><br>Major:<span  data-bind = "text: majors"></span></em><span>-</span><span data-bind = "text: degree"></span>
             </li>
           </ul>
         </div>
@@ -89,7 +91,7 @@ Cameron Pittman, Udacity Course Developer
         <div class="education-entry">
           <ul>
             <li>
-              <a data-bind = "text: title"></a><span data-bind = "text: school"> -- </span>
+              <a data-bind = "text: title"></a><span>--</span><span data-bind = "text: school"></span>
               <div data-bind = "text: dates" class="date-text"><p data-bind = "text: school"></p>
               </div>
               <br><a data-bind = "attr: {href: url, title: url}, text: url"></a>
