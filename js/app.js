@@ -11,26 +11,23 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
-    disableDefaultUI: true
+    disableDefaultUI: true,
   };
-
   /*
   For the map to be displayed, the googleMap var must be
   appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
   /*
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
   */
+  vm = new ViewModel();
   function locationFinder() {
-
     // initializes an empty array
     var locations = [];
-
     // adds the single location property from bio to the locations array
-    locations.push(data.bio.contacts.location);
+    locations.push(vm.city);
 
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration

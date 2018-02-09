@@ -163,7 +163,7 @@ var ViewModel = function() {
   // self.email = ko.observable(data.bio.contacts.email);
   // self.twitter = ko.observable(data.bio.contacts.twitter);
   // self.github = ko.observable(data.bio.contacts.github);
-  // self.city = ko.observable(data.bio.contacts.location);
+  self.city = ko.observable(data.bio.contacts.location);
 
   self.skills = ko.observableArray(data.bio.skills);
   self.schools = ko.observableArray(data.education.schools);
