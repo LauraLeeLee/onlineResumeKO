@@ -1,268 +1,141 @@
-//------------Model
-var model = {
-  bio: {
-    "name": "Laura Logan",
-    "role": "Frontend Web Developer",
-    "welcomeMessage": "We must let go of the life we have planned, so as to accept the one that is waiting for us.  --Joseph Campbell",
-    "biopic": "images/me-400_small.jpg",
-    "contacts": {
-      "mobile": "724-272-xxxx",
-      "email": "LauraRDH@aol.com",
-      "github": "https://github.com/LauraLeeLee",
-      "location": "Pittsburgh"
-    },
-    "skills": ["HTML", "CSS", "JavaScript", "Photoshop"]
-  },
+/*
+This is the fun part. Here's where we generate the custom Google Map for the website.
+See the documentation below for more details.
+https://developers.google.com/maps/documentation/javascript/reference
+*/
+var map;    // declares a global map variable
+/*
+Start here! initializeMap() is called when page is loaded.
+*/
+function initializeMap() {
+  var locations;
 
+  var mapOptions = {
+    disableDefaultUI: true
+  };
 
-  education: {
-    "schools": [{
-      "name": "University of Pittsburgh",
-      "location": "Pittsburgh, PA",
-      "degree": "Associate",
-      "dates": "1986-1988",
-      "url": "http://www.dental.pitt.edu/students/dental-hygiene-program",
-      "majors": ["Dental Hygiene"]
-    }],
-    "onlineCourses": [{
-        "title": "Frontend Web Development",
-        "school": "Udacity",
-        "url": "https://www.udacity.com",
-        "dates": "2016-2017"
-      },
-      {
-        "title": "Intro to JavaScript",
-        "school": "Code School",
-        "dates": "January 2017",
-        "url": "http//www.codeschool.com"
-      },
-      {
-        "title": "Introduction to CSS3 and HTML5",
-        "school": "Ed2Go",
-        "dates": "March 2016-April 2016",
-        "url": "http://www.ed2go.com"
-      },
-      {
-        "title": "Intermediate CSS3 and HTML5",
-        "school": "Ed2Go",
-        "dates": "May 2016-June 2016",
-        "url": "http://www.ed2go.com"
-      },
-      {
-        "title": "Introduction to JavaScript",
-        "school": "Ed2Go",
-        "dates": "July 2016-August 2016",
-        "url": "http://www.ed2go.com"
-      }
-    ]
-  },
+  /*
+  For the map to be displayed, the googleMap var must be
+  appended to #mapDiv in resumeBuilder.js.
+  */
+  map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
+  /*
+  locationFinder() returns an array of every location string from the JSONs
+  written for bio, education, and work.
+  */
+  function locationFinder() {
 
-  work: {
-    "jobs": [{
-        "employer": "Centre for Dentistry",
-        "title": "Office Manager/Dental Marketer",
-        "location": "Cranberry Twp, PA",
-        "dates": "1993-present",
-        "description": "Help manage daily flow of dental office. Interview and assist in the managment of employees. Manage marketing for new and existing patients."
-      },
-      {
-        "employer": "Dr. Irving Kraft",
-        "title": "Dental Hygienist",
-        "location": "Philadelphia, PA",
-        "dates": "1988-1993",
-        "description": "Provide prophylaxis, root planing and scaling, take necessary xrays, patient education, treatment presentation."
-      }
-    ]
-  },
+    // initializes an empty array
+    var locations = [];
 
-  projects: {
-    "projects": [{
-        "title": "Portfolio Project",
-        "dates": "December, 2016",
-        "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
-        "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"]
+    // adds the single location property from bio to the locations array
+    locations.push(data.bio.contacts.location);
 
-      },
-
-      {
-        "title": "Roma",
-        "dates": "August 2015",
-        "description": "Journey through the Eternal City",
-        "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg", "images/rome3-250_xsmall.jpg"]
-      },
-
-      {
-        "title": "Fiorenze",
-        "dates": "September 2011",
-        "description": "Discovery of Renessaince history",
-        "images": ["images/florence3-250_xsmall.jpg", "images/florence4-250_xsmall.jpg", "images/florence5-250_xsmall.jpg"]
-      }
-    ]
-  },
-
-};
-
-//------------------Octopus
-var octopus = {
-  // accesses the model for specific data sections , returns an object
-  getModelData: function(data_section) {
-    return model[data_section];
-  },
-
-  //calls initial view render functions to render to the page
-  init: function() {
-    //render bio section
-    var bioData = this.getModelData('bio');
-    bioView.render(bioData);
-    //render work section
-    var workData = this.getModelData('work');
-    workView.render(workData);
-
-    var educationData = this.getModelData('education');
-    educationView.render(educationData);
-
-    var projectData = this.getModelData('projects');
-    projectView.render(projectData);
-
-    mapView.render();
-
-  },
-
-
-};
-
-//-----------------View
-var bioView = {
-  render: function(bioData) {
-    formattedName = HTMLheaderName.replace("%data%", bioData.name);
-    formattedRole = HTMLheaderRole.replace("%data%", bioData.role);
-    formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bioData.welcomeMessage);
-    formattedMobile = HTMLmobile.replace("%data%", bioData.contacts.mobile);
-    formattedGithub = HTMLgithub.replace("%data%", bioData.contacts.github);
-    formattedEmail = HTMLemail.replace("%data%", bioData.contacts.email);
-    formattedLocation = HTMLlocation.replace("%data%", bioData.contacts.location);
-    formattedBioPic = HTMLbioPic.replace("%data%", bioData.biopic);
-
-    var header = $("#header");
-    header.prepend(formattedRole);
-    header.prepend(formattedName);
-    header.append(formattedWelcomeMsg);
-
-    var topContacts = $("#topContacts");
-    topContacts.prepend(formattedLocation);
-    topContacts.prepend(formattedMobile);
-    topContacts.prepend(formattedGithub);
-    topContacts.prepend(formattedEmail);
-    header.append(formattedBioPic);
-
-    header.append(HTMLskillsStart);
-    var _skillsContainer = $('#skills');
-    bioData.skills.forEach(function(skill) {
-      _skillsContainer.append(HTMLskills.replace("%data%", skill));
+    // iterates through school locations and appends each location to
+    // the locations array. Note that forEach is used for array iteration
+    // as described in the Udacity FEND Style Guide:
+    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    data.education.schools.forEach(function(school){
+      locations.push(school.location);
     });
+    // iterates through work locations and appends each location to
+    // the locations array. Note that forEach is used for array iteration
+    // as described in the Udacity FEND Style Guide:
+    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    data.work.jobs.forEach(function(job){
+      locations.push(job.location);
+    });
+
+    return locations;
   }
-};
-
-var workView = {
-  render: function(workData) {
-    var _workContainer = $('#workExperience');
-    workData.jobs.forEach(function(job) {
-      var _workEntry = $(HTMLworkStart);
-      _workEntry.append(HTMLworkEmployer.replace("%data%", job.employer));
-      _workEntry.append(HTMLworkTitle.replace("%data%", job.title));
-      _workEntry.append(HTMLworkLocation.replace("%data%", job.location));
-      _workEntry.append(HTMLworkDates.replace("%data%", job.dates));
-      _workEntry.append(HTMLworkDescription.replace("%data%", job.description));
-      _workContainer.append(_workEntry);
+  /*
+  createMapMarker(placeData) reads Google Places search results to create map pins.
+  placeData is the object returned from search results containing information
+  about a single location.
+  */
+  function createMapMarker(placeData) {
+    // The next lines save location data from the search result object to local variables
+    var lat = placeData.geometry.location.lat();  // latitude from the place service
+    var lon = placeData.geometry.location.lng();  // longitude from the place service
+    var name = placeData.formatted_address;   // name of the place from the place service
+    var bounds = window.mapBounds;            // current boundaries of the map window
+    // marker is an object with additional data about the pin for a single location
+    var marker = new google.maps.Marker({
+      map: map,
+      position: placeData.geometry.location,
+      title: name
     });
+    // infoWindows are the little helper windows that open when you click
+    // or hover over a pin on a map. They usually contain more information
+    // about a location.
+    var infoWindow = new google.maps.InfoWindow({
+      content: name
+    });
+
+    // hmmmm, I wonder what this is about...
+    google.maps.event.addListener(marker, 'click', function() {
+      // your code goes here!
+      var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + marker.title + '';
+      infoWindow.open(map, marker);
+      infoWindow.setContent('<div class="infoWindow">' +'<h6>' + marker.title + '</h6>'+
+                      '<br>' +
+                      '<img class="bgimg" src="' + streetviewUrl + '">');
+    });
+
+    // this is where the pin actually gets added to the map.
+    // bounds.extend() takes in a map location object
+    bounds.extend(new google.maps.LatLng(lat, lon));
+    // fit the map to the new marker
+    map.fitBounds(bounds);
+    // center the map
+    map.setCenter(bounds.getCenter());
   }
-};
-
-var educationView = {
-  render: function(educationData) {
-    var _educationContainer = $('#education');
-    var _educationEntry;
-    //var _educationEntry_last = $(".education-entry:last");
-    educationData.schools.forEach(function(school) {
-      var _educationEntry = $(HTMLschoolStart);
-      _educationContainer.append(_educationEntry);
-      _educationEntry.prepend(HTMLschoolDegree.replace("%data%", school.degree));
-      _educationEntry.prepend(HTMLschoolMajor.replace("%data%", school.majors));
-      _educationEntry.prepend(HTMLschoolDates.replace("%data%", school.dates));
-      _educationEntry.prepend(HTMLschoolName.replace("%data%", school.name));
-      _educationEntry.prepend(HTMLschoolLocation.replace("%data%", school.location));
-    });
-
-  _educationContainer.append(HTMLonlineClasses);
-    educationData.onlineCourses.forEach(function(course) {
-      var _educationEntry = $(HTMLschoolStart);
-      _educationContainer.append(_educationEntry);
-      _educationEntry.append(HTMLonlineTitle.replace("%data%", course.title));
-      _educationEntry.append(HTMLonlineSchool.replace("%data%", course.school));
-      _educationEntry.append(HTMLonlineDates.replace("%data%", course.dates));
-      _educationEntry.append(HTMLonlineURL.replace("%data%", course.url).replace("#", course.url));
-    });
+  /*
+  callback(results, status) makes sure the search returned results for a location.
+  If so, it creates a new map marker for that location.
+  */
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        console.log(results); // <- here
+      createMapMarker(results[0]);
+    }
   }
-};
-
-var projectView = {
-  render: function(projectData) {
-    var _projectContainer = $('#projects');
-    var _projectEntry = $(HTMLprojectStart);
-    for (var i = 0; i < projectData.projects.length; i++) {
-
-      _projectEntry.append(HTMLprojectTitle.replace("%data%", projectData.projects[i].title));
-      _projectEntry.append(HTMLprojectDates.replace("%data%", projectData.projects[i].dates));
-      _projectEntry.append(HTMLprojectDescription.replace("%data%", projectData.projects[i].description));
-      for (var j = 0; j < projectData.projects[i].images.length; j++) {
-        _projectEntry.append(HTMLprojectImage.replace("%data%", projectData.projects[i].images[j]));
+  /*
+  pinPoster(locations) takes in the array of locations created by locationFinder()
+  and fires off Google place searches for each location
+  */
+  function pinPoster(locations) {
+    // creates a Google place search service object. PlacesService does the work of
+    // actually searching for location data.
+    var service = new google.maps.places.PlacesService(map);
+    // Iterates through the array of locations, creates a search object for each location
+      locations.forEach(function(place){
+      // the search request object
+      var request = {
+        query: place
       };
-      _projectContainer.append(_projectEntry);
-    };
-  }
-};
-
-var mapView = {
-  render: function(mapData) {
-    $("#mapDiv").append(googleMap);
-  }
-};
-
-var intButtonView = {
-  //code that changes the name format
-  intName: function(name) {
-    var newName = '';
-
-    console.log(name);
-
-    name = name.trim().split(" ");
-    console.log(name);
-    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
-    name[1] = name[1].toUpperCase();
-
-    return name[0] + " " + name[1];
-    //return newName;
-  },
-  //function to initialize button, appends button to page
-  //adds click handler
-  init: function() {
-    var self = this;
-    $('#main').append(internationalizeButton);
-    $('button').click(function() {
-      //self is used instead of this because of, not sure why, the 'this' could cause
-      //confusion in other areas of the code?
-      self.render();
+      // Actually searches the Google Maps API for location data and runs the callback
+      // function with the search results after each search.
+      service.textSearch(request, callback);
     });
-  },
-  render: function() {
-    var $name = $('#name');
-    var intName = intButtonView.intName($name.text());
-    $name.html(intName);
-    console.log(intName);
-  },
+  }
 
-};
-intButtonView.init();
+  // Sets the boundaries of the map based on pin locations
+  window.mapBounds = new google.maps.LatLngBounds();
+  // locations is an array of location strings returned from locationFinder()
+  locations = locationFinder();
+  // pinPoster(locations) creates pins on the map for each location in
+  // the locations array
+  pinPoster(locations);
 
-octopus.init();
+}
+// Calls the initializeMap() function when the page loads
+window.addEventListener('load', initializeMap);
+
+// Vanilla JS way to listen for resizing of the window
+// and adjust map bounds
+window.addEventListener('resize', function(e) {
+  //Make sure the map bounds get updated on page resize
+  map.fitBounds(mapBounds);
+});

@@ -59,31 +59,29 @@ Cameron Pittman, Udacity Course Developer
     </div>
     <div id="projects">
       <h2>Projects</h2>
-      <div class="project-entry blue">
-        <ul data-bind = "foreach: projects">
-          <li>
-            <a data-bind = "text: title" class = "project-a-tag"></a>
-            <span data-bind = "text: dates" class="date-text"></span>
-            <p data-bind = "text: description"><br></p>
-            <div  data-bind = "foreach: images">
-              <img data-bind = "attr: {src: $data}">
-            <div>
-          </li>
-        </ul>
+      <div data-bind = "foreach: projects">
+        <div class="project-entry blue">
+          <ul>
+            <li>
+              <a data-bind = "text: title" class = "project-a-tag"></a>
+              <span data-bind = "text: dates" class="date-text"></span>
+              <p data-bind = "text: description"><br></p>
+              <div  data-bind = "foreach: images">
+                <img data-bind = "attr: {src: $data}">
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div id="education" class="yellow-gradient">
       <h2>Education</h2>
       <div data-bind = "foreach: schools">
         <div class="education-entry">
-          <ul>
-            <li >
               <a data-bind = "attr: {href: url, title: url}, text: name"></a>
-              <div data-bind = "text: dates" class="date-text"></div>
               <div data-bind = "text: location" class = "location-text"></div>
+              <div data-bind = "text: dates" class="date-text"></div>
               <em><br>Major:<span  data-bind = "text: majors"></span></em><span>-</span><span data-bind = "text: degree"></span>
-            </li>
-          </ul>
         </div>
       </div>
       <h3>Online Classes</h3>
@@ -106,18 +104,9 @@ Cameron Pittman, Udacity Course Developer
     </div>
     <div id="lets-connect">
       <h2 class="center-text">Let's Connect</h2>
-      <ul id="footerContacts" class="flex-box">
+      <ul data-bind = "foreach: footer" id="footerContacts" class="flex-box">
         <li>
-          <a href="mailto:laurardh@aol.com" class="entypo-mail"></a>
-        </li>
-        <li>
-          <a href="https://www.github.com/LauraLeeLee" class="entypo-github"></a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/laura-logan-30272a16?trk=hp-identity-name" class="entypo-linkedin"></a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/lauraleelee" class="entypo-facebook"></a>
+          <a data-bind = "attr: {href: url, class: classIcon}"></a>
         </li>
       </ul>
     </div>
@@ -152,7 +141,7 @@ Cameron Pittman, Udacity Course Developer
   writing. In resumeBuilder.js, you'll be writing code that builds the resume
   dynamically when this website, index.html, is opened.
   -->
-  <!-- <script src="js/app.js"></script> -->
+  <script src="js/app.js"></script>
 
 
   <!--

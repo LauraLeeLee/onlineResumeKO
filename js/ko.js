@@ -104,31 +104,44 @@ var data = {
   },
   projects: {
     "projects": [{
-        "title": "Portfolio Project",
-        "link": "",
-        "dates": "December, 2016",
-        "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
-        "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"]
-
-      },
-
-      {
-        "title": "Roma",
-        "link": "",
-        "dates": "August 2015",
-        "description": "Journey through the Eternal City",
-        "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg", "images/rome3-250_xsmall.jpg"]
-      },
-
-      {
-        "title": "Fiorenze",
-        "link": "",
-        "dates": "September 2011",
-        "description": "Discovery of Renessaince history",
-        "images": ["images/florence3-250_xsmall.jpg", "images/florence4-250_xsmall.jpg", "images/florence5-250_xsmall.jpg"]
-      }
-    ]
+      "title": "Portfolio Project",
+      "link": "",
+      "dates": "December, 2016",
+      "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
+      "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"]
+    },
+    {
+      "title": "Roma",
+      "link": "",
+      "dates": "August 2015",
+      "description": "Journey through the Eternal City",
+      "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg", "images/rome3-250_xsmall.jpg"]
+    },
+    {
+      "title": "Fiorenze",
+      "link": "",
+      "dates": "September 2011",
+      "description": "Discovery of Renessaince history",
+      "images": ["images/florence3-250_xsmall.jpg", "images/florence4-250_xsmall.jpg", "images/florence5-250_xsmall.jpg"]
+    }]
   },
+  footer: [{
+    title: "laurardh@aol.com",
+    url: "mailto:laurardh@aol.com",
+    classIcon: "entypo-mail"
+  },
+  { title: "github",
+    url: "https://www.github.com/LauraLeeLee",
+    classIcon: "entypo-github"
+    },
+  { title: "linkedin",
+    url: "https://www.linkedin.com/in/laura-logan-30272a16?trk=hp-identity-name",
+    classIcon: "entypo-linkedin"
+  },
+  { title: "facebook",
+    url: "https://www.facebook.com/lauraleelee",
+    classIcon: "entypo-facebook"
+  }]
 };
 
 //---------------ViewModel
@@ -141,6 +154,7 @@ var ViewModel = function() {
   self.welcomeMessage = ko.observable(data.bio.welcomeMessage);
   self.biopic = ko.observable(data.bio.biopic);
   self.contacts = ko.observableArray(data.bio.contacts);
+  self.footer = ko.observableArray(data.footer);
   self.link = ko.observable(data.bio.contacts.link);
   self.facebook = ko.observable(data.bio.facebook);
   self.linkedin = ko.observable(data.bio.linkedin);
