@@ -49,8 +49,8 @@ Cameron Pittman, Udacity Course Developer
           <ul>
             <li>
               <a data-bind = "text: employer"></a><span data-bind = "text: title"></span>
-              <div data-bind = "text: dates" class="date-text"></div>
               <div data-bind = "text: location" class="location-text"></div>
+              <div data-bind = "text: dates" class="date-text"></div>
               <p data-bind = "text: description"><br></p>
             </li>
           </ul>
@@ -62,12 +62,12 @@ Cameron Pittman, Udacity Course Developer
       <div data-bind = "foreach: projects">
         <div class="project-entry blue">
           <ul>
-            <li>
+            <li class="flex-item">
               <a data-bind = "text: title" class = "project-a-tag"></a>
               <span data-bind = "text: dates" class="date-text"></span>
               <p data-bind = "text: description"><br></p>
               <div  data-bind = "foreach: images">
-                <img data-bind = "attr: {src: $data}">
+                <img data-bind = "attr: {src: $data}" class="flex-item">
               </div>
             </li>
           </ul>
@@ -109,6 +109,7 @@ Cameron Pittman, Udacity Course Developer
           <a data-bind = "attr: {href: url, class: classIcon}"></a>
         </li>
       </ul>
+      <button data-bind = "click: intName">Internationalize</button>
     </div>
   </div>
 

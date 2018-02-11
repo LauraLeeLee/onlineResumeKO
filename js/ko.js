@@ -178,5 +178,22 @@ var ViewModel = function() {
 
     }
   }
+
+  //code that changes the name format
+  self.intName = function(name) {
+    // var newName = '';
+
+    console.log(self.name());
+    name = self.name().trim().split(" ");
+    console.log(name);
+    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+    name[1] = name[1].toUpperCase();
+    self.name = name[0] + " " + name[1];
+    console.log(self.name);
+    return self.name;
+    // console.log(name[0] + " " + name[1]);
+
+  }
+
 };
 ko.applyBindings(new ViewModel());

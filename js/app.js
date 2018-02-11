@@ -3,7 +3,8 @@ This is the fun part. Here's where we generate the custom Google Map for the web
 See the documentation below for more details.
 https://developers.google.com/maps/documentation/javascript/reference
 */
-var map;    // declares a global map variable
+var map;
+var vm;   // declares a global map variable
 /*
 Start here! initializeMap() is called when page is loaded.
 */
@@ -127,7 +128,7 @@ function initializeMap() {
   // the locations array
   pinPoster(locations);
 
-}
+} //end initialize map
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
 
@@ -137,3 +138,22 @@ window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
   map.fitBounds(mapBounds);
 });
+
+//code that changes the name format
+function intName(name) {
+  var newName = '';
+
+
+  console.log(vm.name());
+  name = vm.name().trim().split(" ");
+  console.log(name);
+  name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+  console.log(name[0]);
+  name[1] = name[1].toUpperCase();
+  console.log(name[1]);
+
+  newName = name[0] + " " + name[1];
+  return newName;
+  // console.log(name[0] + " " + name[1]);
+  console.log(newName);
+}
