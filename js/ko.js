@@ -178,21 +178,19 @@ var ViewModel = function() {
 
     }
   }
-
-  //code that changes the name format
+  //code that changes the name format to internationalized and back to regular
   self.intName = function(name) {
-    // var newName = '';
-
+    var name = self.name().trim().split(" ");
+    if (name[1] === name[1].toUpperCase()) {
+      name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+      name[1] = name[1].slice(0, 1).toUpperCase() + name[1].slice(1).toLowerCase();
+      self.name(name[0] + " " + name[1]);
+    } else {
+        name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+        name[1] = name[1].toUpperCase();
+        self.name(name[0] + " " + name[1]);
+    }
     console.log(self.name());
-    name = self.name().trim().split(" ");
-    console.log(name);
-    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
-    name[1] = name[1].toUpperCase();
-    self.name = name[0] + " " + name[1];
-    console.log(self.name);
-    return self.name;
-    // console.log(name[0] + " " + name[1]);
-
   }
 
 };

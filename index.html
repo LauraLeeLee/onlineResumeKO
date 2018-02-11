@@ -24,7 +24,7 @@ Cameron Pittman, Udacity Course Developer
 <body>
   <div id="main">
     <div id="header" class="center-content clear-fix">
-      <h1 data-bind="text: name"></h1>
+      <h1 data-bind="text: name" id="name"></h1>
       <span data-bind="text: role"></span>
       <ul data-bind="foreach: contacts" id="topContacts" class="flex-box">
         <!--visible: value binds the visibility to IF there is a value, if the value is "", it renders false and doesn't show the element  -->
@@ -38,7 +38,7 @@ Cameron Pittman, Udacity Course Developer
       <img data-bind="attr: {src: biopic}" class="biopic"></img>
       <h3 id="skills-h3">Skills at a Glance</h3>
       <ul data-bind = "foreach: skills" id="skills" class="flex-column">
-        <li class="flex-item"><span data-bind = "text: $data" class="white-text"></span></li>
+        <li class="flex-item skills-li"><span data-bind = "text: $data" class="white-text"></span></li>
       </ul>
     </div>
     <div style="clear: both;"></div>
@@ -51,7 +51,8 @@ Cameron Pittman, Udacity Course Developer
               <a data-bind = "text: employer"></a><span data-bind = "text: title"></span>
               <div data-bind = "text: location" class="location-text"></div>
               <div data-bind = "text: dates" class="date-text"></div>
-              <p data-bind = "text: description"><br></p>
+              <br>
+              <br><p data-bind = "text: description"></p>
             </li>
           </ul>
         </div>
@@ -60,9 +61,9 @@ Cameron Pittman, Udacity Course Developer
     <div id="projects">
       <h2>Projects</h2>
       <div data-bind = "foreach: projects">
-        <div class="project-entry blue">
+        <div class="project-entry blue" class="flex-box">
           <ul>
-            <li class="flex-item">
+            <li>
               <a data-bind = "text: title" class = "project-a-tag"></a>
               <span data-bind = "text: dates" class="date-text"></span>
               <p data-bind = "text: description"><br></p>

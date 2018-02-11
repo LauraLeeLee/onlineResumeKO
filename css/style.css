@@ -226,6 +226,10 @@ ul {
   float: right;
 }
 
+.skills-li {
+  margin-right: 25px;
+}
+
 .skills-link {
   font-size: 1em;
   display: inline;
@@ -290,10 +294,12 @@ ul {
 }
 
 .flex-column {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding: 10px;
+  height: 70px;
+  margin-right: 35px;
 }
 
 .center-content {
