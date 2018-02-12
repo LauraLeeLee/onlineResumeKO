@@ -104,25 +104,32 @@ var data = {
   },
   projects: {
     "projects": [{
+      "title": "Neighborhood Map Project",
+      "link": "https://github.com/LauraLeeLee/NeighborhoodMapProject",
+      "dates": "January 2018",
+      "description": "Final project for Udacity FEND program. Main points to the project were using Google Map Apis as well as Google Places services, adding a third party api and KnockoutJS for rendering to the DOM.",
+      "images": ["images/map_proj1-250_xsmall.png", "images/map_proj2-250_xsmall.png", "images/map_proj4-250_xsmall.png"]
+    },
+    {
+      "title": "Cat Clicker Pro",
+      "link": "https://github.com/LauraLeeLee/catClickerPro",
+      "dates": "September 2017",
+      "description": "Udacity FEND lesson project. We were given base code. Lessons for this task were to reinforce separation of concerns using MVO structure. Includes three view model areas to separate the different views of this application",
+      "images": ["images/catClick1-250_xsmall.png", "images/catClick2-250_xsmall.png", "images/catClick3-250_xsmall.png"]
+    },
+    {
+      "title": "Classic Arcade Game",
+      "link": "https://github.com/LauraLeeLee/fendArcadeGame",
+      "dates": "April 2017",
+      "description": "Udacity FEND project. We were given base code. Our task was to create the players as well as the cars using skills learned from the lessons for Object Constructors, Prototypal Classes, Scopes, This, and Closures. ",
+      "images": ["images/arcade1-250_xsmall.png", "images/arcade2-250_xsmall.png", "images/arcade3-250_xsmall.png"]
+    },
+    {
       "title": "Portfolio Project",
       "link": "",
       "dates": "December, 2016",
       "description": "Udacity project utilizing skills learned of HTML, CSS and responsiveness",
-      "images": ["images/portfolio1-250_xsmall.png", "images/portfolio2-250_xsmall.png"]
-    },
-    {
-      "title": "Roma",
-      "link": "",
-      "dates": "August 2015",
-      "description": "Journey through the Eternal City",
-      "images": ["images/rome1-250_xsmall.jpg", "images/rome2-250_xsmall.jpg", "images/rome3-250_xsmall.jpg"]
-    },
-    {
-      "title": "Fiorenze",
-      "link": "",
-      "dates": "September 2011",
-      "description": "Discovery of Renessaince history",
-      "images": ["images/florence3-250_xsmall.jpg", "images/florence4-250_xsmall.jpg", "images/florence5-250_xsmall.jpg"]
+      "images": ["images/portfolio1-250_xsmall.png", "images/porfolio2-250_xsmall.png"]
     }]
   },
   footer: [{

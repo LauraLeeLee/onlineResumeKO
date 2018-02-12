@@ -29,9 +29,9 @@ Cameron Pittman, Udacity Course Developer
       <ul data-bind="foreach: contacts" id="topContacts" class="flex-box">
         <!--visible: value binds the visibility to IF there is a value, if the value is "", it renders false and doesn't show the element  -->
         <li data-bind="visible: value" class="flex-item">
-          <span data-bind="text: title" class="blue-text"></span>
-          <a class="white-text skills-link" data-bind="attr: {href: link, title: link}, visible: link, text: value"></a>
-          <span data-bind="text: value, css: {'no-link': noLinkClass()===true}" class="white-text"></span>
+          <span data-bind="text: title" class="blue-text flex-item"></span>
+          <a class="white-text skills-link flex-item" data-bind="attr: {href: link, title: link}, visible: link, text: value"></a>
+          <span data-bind="text: value, css: {'no-link': noLinkClass()===true}" class="white-text flex-item"></span>
         </li>
       </ul>
       <span data-bind="text: welcomeMessage" class="welcome-message"></span>
@@ -61,14 +61,17 @@ Cameron Pittman, Udacity Course Developer
     <div id="projects">
       <h2>Projects</h2>
       <div data-bind = "foreach: projects">
-        <div class="project-entry blue" class="flex-box">
+        <div class="project-entry blue">
           <ul>
             <li>
-              <a data-bind = "text: title" class = "project-a-tag"></a>
+              <a data-bind = "attr: {href: link, title: link}, text: title" class = "project-a-tag"></a>
+              <p>
               <span data-bind = "text: dates" class="date-text"></span>
-              <p data-bind = "text: description"><br></p>
+              <br>
+              <span data-bind = "text: description" class="proj-description"></span>
+             </p>
               <div  data-bind = "foreach: images">
-                <img data-bind = "attr: {src: $data}" class="flex-item">
+                <img data-bind = "attr: {src: $data}">
               </div>
             </li>
           </ul>
